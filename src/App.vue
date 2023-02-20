@@ -24,8 +24,8 @@ testHttp()
 
 <style scoped>
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 6rem;
+  padding: 1.5rem;
   will-change: filter;
 }
 .logo:hover {
