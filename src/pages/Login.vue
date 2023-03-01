@@ -1,0 +1,109 @@
+<template>
+  <div class="Login">
+    <div class="Login__main">
+      <div class="introduct">1</div>
+      <div class="form">
+        <div class="form-avatar">
+        </div>
+        <div class="form-title form-text">
+          拨云见日 茅塞顿开
+        </div>
+        <div class="form-tips form-text">
+          大丈夫生于天地之间,岂能郁郁久居人下!
+        </div>
+        <Input placeholder="Email" />
+        <Input placeholder="Password" inputType="password"  />
+        <Button />
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import Input from '@/components/Input.vue'
+import Button from '@/components/Button.vue'
+import { ref } from 'vue'
+
+const emailVal = ref('')
+const passwordVal = ref('')
+
+
+</script>
+
+<style scoped lang="less">
+.Login {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 80px;
+  // align-items: center;
+  justify-content: center;
+
+  &__main {
+    width: 80%;
+    height: 80%;
+    max-width:80%;
+    max-height: 80%;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 40px 20px;
+    box-shadow: 0px 0px 20px 5px #CCC6D3;
+    overflow: hidden;
+    display: flex;
+    .introduct{
+      background:dodgerblue;
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+
+      &-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background: white;
+      }
+
+      &-text {
+        width: 80%;
+        padding: 10px 0 5px;
+        text-align: center;
+        font-family: lixunkexingshu2;
+      }
+      &-title{
+
+        font-size: 28px;
+      }
+
+      &-tips {
+        font-size: 14px;
+        color: rgba(0, 0, 0, .6);
+      }
+    }
+    @media (min-width:750px) {
+      // background:yellow;
+      :where(&) > div {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+    }
+    @media (max-width:750px) {
+      background:green;
+      .form{
+        flex: 1;
+
+        &-title {
+          font-size: 1.25rem;
+        }
+      }
+      .introduct {
+        display: none;
+      }
+    }
+  }
+}
+</style>
