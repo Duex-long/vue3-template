@@ -1,5 +1,5 @@
 <template>
-  <div class="Input" :class="{ active: (inputState === 'focus' || inputVal) }">
+  <div class="Input" :class="{ active: (inputState === 'focus' || inputVal),focus:inputState === 'focus' }">
     <div class="Input-container">
       <div class="Input-placehloder">{{ placeholder }}</div>
       <input v-model="inputVal" @focus="inputFocus" @blur="inputBlur" class="Input-insert" :type="inputType" />
@@ -50,12 +50,18 @@ const inputFocus = () => {
   background: transparent;
   --placeholder-diff: 0;
   --placeholder-scale: 1;
+  --placeholder-bg: transparent;
   --border-color: rgba(204, 204, 204, .6);
-
+  --tips-color:rgba(204, 204, 204, .6);
   &.active {
-    --border-color: dodgerblue;
     --placeholder-diff: -80%;
-    --placeholder-scale: .65;
+    --placeholder-scale: .7;
+  }
+
+  &.focus {
+    --tips-color:dodgerblue;
+    --border-color: dodgerblue;
+    --placeholder-bg: #fff;
   }
 
   &-container {
@@ -75,7 +81,8 @@ const inputFocus = () => {
 
     .icon {
       transition: all .4s ease 0s;
-      color: var(--border-color);
+      font-size: 1rem;
+      color: var(--tips-color);
     }
   }
 
@@ -88,16 +95,15 @@ const inputFocus = () => {
     font-size: .8rem;
     font-weight: bold;
     flex: 1;
-    // 局部变量
   }
 
   &-placehloder {
     position: absolute;
     padding: 0 5px;
-    background: rgb(255, 255, 255);
+    background: var(--placeholder-bg);
     display: inline-block;
-    color: rgba(204, 204, 204, .6);
-    transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s;
+    color: var(--tips-color);
+    transition: all .4s ease 0s;
     transform: translateY(var(--placeholder-diff)) scale(var(--placeholder-scale));
     user-select: none;
   }

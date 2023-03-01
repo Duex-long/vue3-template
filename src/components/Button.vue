@@ -1,6 +1,19 @@
 <template>
-  <div class="Button">Button</div>
+  <div class="Button" :class="type">
+    <slot />
+  </div>
 </template>
+
+<script setup lang="ts">
+import { PropType } from 'vue'
+
+defineProps({
+	type:{
+		type:String as PropType<'primary'>,
+		default:() => 'primary'
+	}
+})
+</script>
 
 <style scoped lang="less">
 .Button {
@@ -8,8 +21,11 @@
   min-height: 20px;
   min-width: 40px;
   border-radius: 8px;
-  color: #fff;
   font-size: 1rem;
-  background:dodgerblue;
-}
-</style>
+
+  &.primary {
+    color: #fff;
+    background: dodgerblue;
+
+  }
+}</style>

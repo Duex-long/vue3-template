@@ -13,7 +13,9 @@
         </div>
         <Input placeholder="Email" />
         <Input placeholder="Password" inputType="password"  />
-        <Button />
+        <Button style="width: 50%;">
+          <div  class="form-text">登记</div>
+        </Button>
       </div>
     </div>
   </div>
@@ -68,17 +70,18 @@ const passwordVal = ref('')
       }
 
       &-text {
-        width: 80%;
-        padding: 10px 0 5px;
+        // width: 80%;
+
         text-align: center;
         font-family: lixunkexingshu2;
       }
       &-title{
-
+        padding:  5px 0;
         font-size: 28px;
       }
 
       &-tips {
+        padding:  5px 0;
         font-size: 14px;
         color: rgba(0, 0, 0, .6);
       }
