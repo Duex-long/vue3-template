@@ -55,13 +55,14 @@ const inputFocus = () => {
   --tips-color:rgba(204, 204, 204, .6);
   &.active {
     --placeholder-diff: -80%;
-    --placeholder-scale: .7;
+    --placeholder-scale: .75;
+    --placeholder-bg: #fff;
   }
 
   &.focus {
     --tips-color:dodgerblue;
     --border-color: dodgerblue;
-    --placeholder-bg: #fff;
+
   }
 
   &-container {
@@ -95,6 +96,7 @@ const inputFocus = () => {
     font-size: .8rem;
     font-weight: bold;
     flex: 1;
+    z-index: 1;
   }
 
   &-placehloder {
