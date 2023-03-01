@@ -46,7 +46,7 @@ const inputFocus = () => {
 <style scoped lang="less">
 .Input {
   width: 60%;
-  padding: 15px;
+  padding: 10px 0px;
   background: transparent;
   --placeholder-diff: 0;
   --placeholder-scale: 1;
@@ -62,7 +62,6 @@ const inputFocus = () => {
   &.focus {
     --tips-color:dodgerblue;
     --border-color: dodgerblue;
-
   }
 
   &-container {
@@ -75,7 +74,6 @@ const inputFocus = () => {
     transition: all .4s ease 0s;
     border-color: var(--border-color);
     border-radius: 10px;
-    transition: all .2s ease 0s;
     background: transparent;
     display: flex;
     align-items: center;
@@ -105,6 +103,7 @@ const inputFocus = () => {
     background: var(--placeholder-bg);
     display: inline-block;
     color: var(--tips-color);
+    font-weight: bold;
     transition: all .4s ease 0s;
     transform: translateY(var(--placeholder-diff)) scale(var(--placeholder-scale));
     user-select: none;

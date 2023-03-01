@@ -1,11 +1,13 @@
 <template>
   <button class="Button" :class="type">
     <slot />
+    <loading-icon/>
   </button>
 </template>
 
 <script setup lang="ts">
 import { PropType } from 'vue'
+import LoadingIcon from './LoadingIcon.vue'
 
 defineProps({
 	type:{
