@@ -1,10 +1,10 @@
 <template>
   <div class="LoadingIcon">
     <div class="body">
-      <div class="arm behind"></div>
-      <div class="arm"></div>
-      <div class="leg behind"></div>
-      <div class="leg"></div>
+      <!-- <div class="arm behind"></div> -->
+      <div class="arm front"></div>
+      <!-- <div class="leg behind"></div>
+      <div class="leg"></div> -->
 
     </div>
   </div>
@@ -24,7 +24,7 @@
     transform: rotate(32deg);
     // transform-origin:4px 11px;
     background: var(--bg-color);
-    animation: shark var(--speed-fast) linear infinite;
+    // animation: shark var(--speed-fast) linear infinite;
 
     &::before {
       content: '';

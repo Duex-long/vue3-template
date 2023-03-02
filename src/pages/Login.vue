@@ -98,7 +98,7 @@ const checkedRememberPassword = ref(false)
       }
 
       &-opt {
-        padding: 0px 0 5px;
+        padding: 0px 0 15px;
         width: 60%;
         display: flex;
         justify-content: space-between;

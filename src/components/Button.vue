@@ -1,7 +1,7 @@
 <template>
   <button class="Button" :class="type">
     <slot />
-    <loading-icon/>
+    <!-- <loading-icon/> -->
   </button>
 </template>
 
