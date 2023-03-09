@@ -1,12 +1,12 @@
 <template>
   <div class="SideNav">
     <div class="SideNav-item" >
-      <RouterLink to="/">
+      <RouterLink to="/" active-class="active">
         <HomeOutlined />
       </RouterLink>
     </div>
     <div class="SideNav-item" >
-      <RouterLink to="/login">
+      <RouterLink to="/login" active-class="active">
         <SendOutlined />
       </RouterLink>
     </div>
@@ -62,6 +62,12 @@ const navLink = (path:string) => {
     cursor: pointer;
     &:hover {
       background-color: #fff;
+      a{
+        color: var(--primary-color);
+      }
+    }
+
+    .active{
       a{
         color: var(--primary-color);
       }
