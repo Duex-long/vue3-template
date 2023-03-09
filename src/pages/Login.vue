@@ -1,10 +1,10 @@
 <template>
   <div class="Login">
     <div class="Login__main">
-      <div class="introduct">1</div>
+      <div class="introduct">
+        <Advertise/>
+      </div>
       <div class="form">
-        <!-- <div class="form-avatar">
-        </div> -->
         <div class="form-title form-text">
           拨云见日 茅塞顿开
         </div>
@@ -22,27 +22,33 @@
           </div>
           <div> </div>
         </div>
-        <Button style="width: 60%;">
+        <Button style="width: 60%;" >
           <div class="form-text">登记</div>
         </Button>
-
         <Button type="default" style="width: 60%; margin-top: 20px;">
           <div class="form-text">求我</div>
         </Button>
 
       </div>
+
+    <!-- <div class="Loading" :class="{active:testRef}" @click="testRef = !testRef" ></div> -->
+
     </div>
   </div>
+
+
 </template>
 
 <script setup lang="ts">
 import Input from '@/components/Input.vue'
 import Button from '@/components/Button.vue'
 import { ref } from 'vue'
+import Advertise from '@/components/advertise.vue'
 
 const emailVal = ref('')
 const passwordVal = ref('')
 const checkedRememberPassword = ref(false)
+const testRef = ref(false)
 
 
 </script>
@@ -57,6 +63,7 @@ const checkedRememberPassword = ref(false)
   justify-content: center;
 
   &__main {
+    position: relative;
     width: 80%;
     height: 80%;
     max-width: 1200px;
@@ -153,6 +160,19 @@ const checkedRememberPassword = ref(false)
       }
     }
 
+    .Loading {
+    --loading-circle:0%;
+    width: 100%;
+    height: 100%;
+    background: dodgerblue;
+    position: absolute;
+    transition: all .4s ease;
+    clip-path: circle(var(--loading-circle));
+    &.active {
+      --loading-circle:100%;
+    }
+  }
+
     @media (min-width:750px) {
 
       // background:yellow;
@@ -178,5 +198,12 @@ const checkedRememberPassword = ref(false)
         display: none;
       }
     }
+
+
   }
-}</style>
+
+
+}
+
+
+</style>

@@ -9,6 +9,10 @@ const routes:RouteRecordRaw[] = [
 	{
 		path:'/login',
 		component: () => import('@/pages/Login.vue')
+	},
+	{
+		path:'/main',
+		component: defineAsyncComponent(() => import('@/pages/main/Index.vue'))
 	}
 ]
 
