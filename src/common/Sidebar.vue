@@ -1,15 +1,15 @@
 <template>
   <div class="SideNav">
-    <div class="SideNav-item" >
-      <RouterLink to="/" active-class="active">
+    <RouterLink to="/">
+      <div class="SideNav-item">
         <HomeOutlined />
-      </RouterLink>
-    </div>
-    <div class="SideNav-item" >
-      <RouterLink to="/login" active-class="active">
+      </div>
+    </RouterLink>
+    <RouterLink to="/login">
+      <div class="SideNav-item">
         <SendOutlined />
-      </RouterLink>
-    </div>
+      </div>
+    </RouterLink>
     <div class="SideNav-item">
       <SendOutlined />
     </div>
@@ -20,24 +20,22 @@
 </template>
 
 <script setup lang="ts">
-import Icon, {SendOutlined ,HomeOutlined} from '@ant-design/icons-vue'
+import { SendOutlined, HomeOutlined } from '@ant-design/icons-vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const navLink = (path:string) => {
+const navLink = (path: string) => {
 	router.push(path)
 }
-
 </script>
 
 <style scoped lang="less">
 .SideNav {
-
-  --primary-color:#606cd5;
+  --primary-color: dodgerblue;
   height: 100%;
   box-sizing: border-box;
-  background: #606cd5;
+  background: var(--primary-color);
   // width: 2%;
   padding: 16px;
   display: flex;
@@ -54,23 +52,22 @@ const navLink = (path:string) => {
     line-height: 45px;
     font-size: 20px;
     color: #fff;
-    transition: background .2s;
+    transition: background 0.2s;
     font-weight: bolder;
-    :nth-child(1){
+    :nth-child(1) {
       margin: 0;
     }
     cursor: pointer;
     &:hover {
       background-color: #fff;
-      a{
-        color: var(--primary-color);
-      }
+      color: var(--primary-color);
     }
+  }
 
-    .active{
-      a{
-        color: var(--primary-color);
-      }
+  .router-link-active {
+    .SideNav-item {
+      background-color: #fff;
+      color: var(--primary-color);
     }
   }
 }
