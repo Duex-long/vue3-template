@@ -1,37 +1,29 @@
 <template>
   <div class="Login">
-    <div class="Login__main">
-      <div class="introduct">1</div>
-      <div class="form">
-        <!-- <div class="form-avatar">
-        </div> -->
-        <div class="form-title form-text">
-          拨云见日 茅塞顿开
-        </div>
-        <div class="form-tips form-text">
-          大丈夫生于天地之间,岂能郁郁久居人下!
-        </div>
-        <Input placeholder="Email" />
-        <Input placeholder="Password" inputType="password" />
-        <div class="form-opt">
-          <div @click="checkedRememberPassword = !checkedRememberPassword">
-            <div class="check" :class="{active:checkedRememberPassword}"></div>
-            <span>
-              Remember me
-            </span>
-          </div>
-          <div> </div>
-        </div>
-        <Button style="width: 60%;">
-          <div class="form-text">登记</div>
-        </Button>
-
-        <Button type="default" style="width: 60%; margin-top: 20px;">
-          <div class="form-text">求我</div>
-        </Button>
-
-      </div>
+    <div class="introduct">
+      <Advertise />
     </div>
+    <div class="form">
+      <div class="form-title form-text">拨云见日 茅塞顿开</div>
+      <div class="form-tips form-text">大丈夫生于天地之间,岂能郁郁久居人下!</div>
+      <Input placeholder="Email" />
+      <Input placeholder="Password" inputType="password" />
+      <div class="form-opt">
+        <div @click="checkedRememberPassword = !checkedRememberPassword">
+          <div class="check" :class="{ active: checkedRememberPassword }"></div>
+          <span> Remember me </span>
+        </div>
+        <div></div>
+      </div>
+      <Button style="width: 60%">
+        <div class="form-text">登记</div>
+      </Button>
+      <Button type="default" style="width: 60%; margin-top: 20px">
+        <div class="form-text">求我</div>
+      </Button>
+    </div>
+
+    <!-- <div class="Loading" :class="{active:testRef}" @click="testRef = !testRef" ></div> -->
   </div>
 </template>
 
@@ -39,94 +31,78 @@
 import Input from '@/components/Input.vue'
 import Button from '@/components/Button.vue'
 import { ref } from 'vue'
+import Advertise from '@/components/advertise.vue'
 
 const emailVal = ref('')
 const passwordVal = ref('')
 const checkedRememberPassword = ref(false)
-
-
+const testRef = ref(false)
 </script>
 
 <style scoped lang="less">
 .Login {
   width: 100%;
   height: 100%;
-  padding-top: 80px;
-  display: flex;
-  justify-content: center;
   box-sizing: border-box;
+  display: flex;
+  .introduct {
+    background: dodgerblue;
+  }
 
-  &__main {
-    width: 80%;
-    height: 80%;
-    max-width: 1200px;
-    max-height: 80%;
-    box-sizing: border-box;
-    background: #fff;
-    border-radius: 40px 20px;
-    box-shadow: 0px 0px 30px 10px #CCC6D3;
-    overflow: hidden;
+  .form {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
 
-    .introduct {
-      background: dodgerblue;
+    &-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      background: white;
     }
 
-    .form {
+    &-text {
+      font-size: 0.75rem;
+      text-align: center;
+      font-family: lixunkexingshu2;
+    }
+
+    &-title {
+      padding: 5px 0;
+      font-size: 28px;
+    }
+
+    &-opt {
+      padding: 0px 0 15px;
+      width: 60%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
+      justify-content: space-between;
+      color: rgba(169, 162, 162, 0.817);
+      cursor: pointer;
 
-      &-avatar {
-        width: 80px;
-        height: 80px;
-        border-radius: 100%;
-        background: white;
+      span {
+        user-select: none;
+        font-size: 12px;
       }
 
-      &-text {
-        font-size: .75rem;
-        text-align: center;
-        font-family: lixunkexingshu2;
-      }
+      .check {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+        width: 14px;
+        height: 14px;
+        border: 2px solid rgba(169, 162, 162, 0.817);
+        transition: all 0.4s ease;
+        border-radius: 2px;
 
-      &-title {
-        padding: 5px 0;
-        font-size: 28px;
-      }
+        // vertical-align: middle;
 
-      &-opt {
-        padding: 0px 0 15px;
-        width: 60%;
-        display: flex;
-        justify-content: space-between;
-        color: rgba(169, 162, 162, 0.817);
-        cursor: pointer;
-
-        span {
-          user-select: none;
-          font-size: 12px;
-        }
-
-        .check {
-          position: relative;
-          display: inline-block;
-          vertical-align: middle;
-          box-sizing: border-box;
-          width: 14px;
-          height: 14px;
-          border: 2px solid rgba(169, 162, 162, 0.817);
-          transition: all .4s ease;
-          border-radius: 2px;
-
-          // vertical-align: middle;
-
-
-          &.active {
-            border-color: dodgerblue;
-            &::after {
+        &.active {
+          border-color: dodgerblue;
+          &::after {
             position: absolute;
             content: '';
             width: 60%;
@@ -134,49 +110,59 @@ const checkedRememberPassword = ref(false)
             background: dodgerblue;
             left: 50%;
             top: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
           }
-          }
-
-
-        }
-
-        &:hover {
-            color: dodgerblue;
         }
       }
 
-      &-tips {
-        padding: 5px 0;
-        font-size: 14px;
-        color: rgba(0, 0, 0, .6);
+      &:hover {
+        color: dodgerblue;
       }
     }
 
-    @media (min-width:750px) {
-
-      // background:yellow;
-      :where(&)>div {
-        width: 50%;
-        box-sizing: border-box;
-        padding: 20px;
-      }
-    }
-
-    @media (max-width:750px) {
-      background: green;
-
-      .form {
-        flex: 1;
-
-        &-title {
-          font-size: 1.25rem;
-        }
-      }
-
-      .introduct {
-        display: none;
-      }
+    &-tips {
+      padding: 5px 0;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.6);
     }
   }
-}</style>
+
+  .Loading {
+    --loading-circle: 0%;
+    width: 100%;
+    height: 100%;
+    background: dodgerblue;
+    position: absolute;
+    transition: all 0.4s ease;
+    clip-path: circle(var(--loading-circle));
+    &.active {
+      --loading-circle: 100%;
+    }
+  }
+
+  @media (min-width: 750px) {
+    // background:yellow;
+    :where(&) > div {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    background: green;
+
+    .form {
+      flex: 1;
+
+      &-title {
+        font-size: 1.25rem;
+      }
+    }
+
+    .introduct {
+      display: none;
+    }
+  }
+}
+</style>
