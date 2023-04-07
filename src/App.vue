@@ -1,12 +1,16 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
+
 
 console.log(import.meta.env.VITE_MODE)
+const route = useRoute()
 
 
 </script>
 
 <template>
   <main  class="main">
+    <h3 class="bread">{{ route.name }}</h3>
     <RouterView/>
   </main>
 </template>

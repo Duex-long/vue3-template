@@ -51,10 +51,10 @@ const checkedRememberPassword = ref(false)
 .Login {
   width: 100%;
   height: 100%;
-  display: flex;
-  box-sizing: border-box;
   padding-top: 80px;
+  display: flex;
   justify-content: center;
+  box-sizing: border-box;
 
   &__main {
     width: 80%;

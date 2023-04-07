@@ -1,6 +1,5 @@
 import Index from '@/pages/index.vue'
 import { RouteRecordRaw } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
 const routes:RouteRecordRaw[] = [
 	{
 		path: '/',
@@ -8,7 +7,13 @@ const routes:RouteRecordRaw[] = [
 	},
 	{
 		path:'/login',
+		name:'login',
 		component: () => import('@/pages/Login.vue')
+	},
+	{
+		path:'/project',
+		name:'project',
+		component: () => import('@/pages/project/Index.vue')
 	}
 ]
 

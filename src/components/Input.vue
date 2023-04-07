@@ -85,7 +85,6 @@ const inputFocus = () => {
     }
   }
 
-
   &-insert {
     background: transparent;
     border: 0;
@@ -108,7 +107,6 @@ const inputFocus = () => {
     transform: translateY(var(--placeholder-diff)) scale(var(--placeholder-scale));
     user-select: none;
   }
-
 
 
   &:hover {
