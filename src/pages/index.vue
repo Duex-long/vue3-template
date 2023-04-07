@@ -52,8 +52,8 @@ const setClick = () => {
 
   @keyframes fadeInLeft {
     0% {
-      transform: translateX(100%);
-      opacity: 0.6;
+      transform: translateX(20%);
+      opacity: 0.3;
     }
 
     100% {
