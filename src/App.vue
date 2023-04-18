@@ -25,21 +25,21 @@ console.log(import.meta.env.VITE_MODE)
 
   .Container {
     flex: 1;
-    padding-top: 80px;
+    // padding-top: 80px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     &__main {
-      width: 80%;
-      height: 80%;
-      max-width: 1200px;
-      max-height: 80%;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      // max-width: 1200px;
+      // max-height: 80%;
       margin: 0 auto;
       background: #fff;
-      border-radius: 40px 20px;
+      // border-radius: 40px 20px;
       overflow: hidden;
-      box-shadow: 0px 0px 30px 10px #ccc6d3;
-      position: relative;
+      // box-shadow: 0px 0px 30px 10px #ccc6d3;
     }
   }
 
