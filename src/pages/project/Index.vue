@@ -41,7 +41,6 @@
     transition: width .4s ease 0s;
     &.main {
     border-right: 1px solid #ccc;
-
     }
   }
 
@@ -51,6 +50,7 @@
       &.main,
       &.side {
         width: 100%;
+        border-right: 1px solid #ccc;
       }
 
     }
@@ -64,6 +64,7 @@
 
       &.side {
         width: 33.3%;
+        border-right:0;
       }
     }
 
