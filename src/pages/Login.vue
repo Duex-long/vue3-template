@@ -32,6 +32,28 @@ import Input from '@/components/Input.vue'
 import Button from '@/components/Button.vue'
 import { ref } from 'vue'
 import Advertise from '@/components/advertise.vue'
+import uuidv4 from 'uuid-random'
+import { fetchGet } from '../fetch'
+import JsEncrypt from 'JsEncrypt'
+import md5 from 'js-md5'
+
+
+
+
+const cacheKey = uuidv4()
+fetchGet('http://localhost:3285/auth/getPublicKey',{cacheKey}).then(async (res) => {
+	const {data} = await res.json()
+
+})
+
+const rsaEncrypt = (publicKey: string, target: string) => {
+	const myEncrypt = new JsEncrypt()
+	const md5Target = md5(target)
+	myEncrypt.setPublicKey(publicKey)
+	const result = myEncrypt.encrypt(md5Target)
+	return result || ''
+}
+
 
 const emailVal = ref('')
 const passwordVal = ref('')
